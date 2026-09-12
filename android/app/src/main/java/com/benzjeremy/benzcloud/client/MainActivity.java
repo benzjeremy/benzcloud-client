@@ -28,11 +28,14 @@ public class MainActivity extends Activity {
         settings.setDomStorageEnabled(true);
         settings.setDatabaseEnabled(true);
         settings.setAllowFileAccess(true);
+        settings.setAllowContentAccess(true);
+        settings.setAllowFileAccessFromFileURLs(true);
+        settings.setAllowUniversalAccessFromFileURLs(true);
 
         webView.setWebViewClient(new AppWebViewClient());
 
-        // Points to local BenzCloud client control daemon or default pairing endpoint
-        webView.loadUrl("http://127.0.0.1:8088");
+        // Load bundled offline client dashboard & pairing wizard
+        webView.loadUrl("file:///android_asset/index.html");
     }
 
     @Override

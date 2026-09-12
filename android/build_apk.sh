@@ -20,6 +20,7 @@ echo "==> 2. Linking resources and generating R.java..."
     -I "$ANDROID_JAR" \
     --manifest "$DIR/app/src/main/AndroidManifest.xml" \
     --java "$WORK/gen" \
+    -A "$DIR/app/src/main/assets" \
     -o "$WORK/unaligned.apk" \
     --auto-add-overlay \
     "$WORK/compiled_res.zip"
