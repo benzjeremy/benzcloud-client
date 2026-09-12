@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BenzCloud Client · Desktop &amp; Mobile Mesh-Cockpit</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <header class="site-header">
+    <div class="nav-container">
+      <div class="nav-left">
+        <a href="https://benzjeremy.github.io/" class="back-root-btn">
+          <span>← benzjeremy.github.io</span>
+        </a>
+        <a href="index.html" class="brand-link">
+          <span class="brand-logo">💻</span>
+          <span class="brand-name">BenzCloud Client</span>
+          <span class="brand-ver">v1.0</span>
+        </a>
+      </div>
+
+      <nav class="main-nav">
+        <a href="app/">
+          <span class="lang-de">Cockpit</span>
+          <span class="lang-en" style="display:none;">Cockpit</span>
+        </a>
+        <a href="#features">
+          <span class="lang-de">Features</span>
+          <span class="lang-en" style="display:none;">Features</span>
+        </a>
+        <a href="#pairing">
+          <span class="lang-de">Pairing-Ablauf</span>
+          <span class="lang-en" style="display:none;">Pairing Flow</span>
+        </a>
+        <a href="#downloads">
+          <span class="lang-de">Downloads</span>
+          <span class="lang-en" style="display:none;">Downloads</span>
+        </a>
+        <a href="#about">
+          <span class="lang-de">Über das Projekt</span>
+          <span class="lang-en" style="display:none;">About</span>
+        </a>
+
+        <div class="lang-switch" role="group" aria-label="Sprachauswahl">
+          <button type="button" class="lang-btn active" id="btn-lang-de" onclick="setLang('de')">DE</button>
+          <button type="button" class="lang-btn" id="btn-lang-en" onclick="setLang('en')">EN</button>
+        </div>
+
+        <a href="https://github.com/benzjeremy/benzcloud-client" target="_blank" rel="noopener noreferrer" class="btn-github">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+          <span>GitHub</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="badge-pill">
+      <span>⚡</span>
+      <span class="lang-de">Zero-Config Mesh-Client · 100% Datenschutz</span>
+      <span class="lang-en" style="display:none;">Zero-Config Mesh Client · 100% Privacy</span>
+    </div>
+    <h1 class="hero-title">
+      <span class="lang-de">Ihr persönlicher Zugang zur <span>BenzCloud</span></span>
+      <span class="lang-en" style="display:none;">Your Personal Gateway to <span>BenzCloud</span></span>
+    </h1>
+    <p class="hero-subtitle">
+      <span class="lang-de">Verbinden Sie PCs und Android-Smartphones vollautomatisch mit Ihrer privaten Cloud. Ein QR-Code oder Pairing-Token genügt – Mesh-VPN, Host-Auflösung und Zugriffsrechte richten sich ohne technische Vorkenntnisse ein.</span>
+      <span class="lang-en" style="display:none;">Seamlessly connect PCs and Android devices to your private cloud suite. Scan a QR code or paste a pairing token — mesh VPN routing, host resolution, and services configure instantly.</span>
+    </p>
+    <div class="hero-cta">
+      <a href="app/" class="btn-primary">
+        <span class="lang-de">🚀 Client-Cockpit testen</span>
+        <span class="lang-en" style="display:none;">🚀 Test Client Cockpit</span>
+      </a>
+      <a href="#downloads" class="btn-secondary">
+        <span class="lang-de">📥 Downloads (PC & Android)</span>
+        <span class="lang-en" style="display:none;">📥 Downloads (PC & Android)</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="section" id="features">
+    <div class="section-header">
+      <h2 class="section-title">
+        <span class="lang-de">Highlights &amp; Funktionsumfang</span>
+        <span class="lang-en" style="display:none;">Highlights &amp; Capabilities</span>
+      </h2>
+      <p class="section-desc">
+        <span class="lang-de">Höchste Ergonomie und kompromissloser Schutz Ihrer Privatsphäre.</span>
+        <span class="lang-en" style="display:none;">Superior interaction ergonomics combined with uncompromising privacy.</span>
+      </p>
+    </div>
+
+    <div class="grid-3">
+      <div class="card">
+        <div class="card-icon">🔗</div>
+        <h3 class="card-title">
+          <span class="lang-de">One-Click QR-Pairing</span>
+          <span class="lang-en" style="display:none;">One-Click QR Pairing</span>
+        </h3>
+        <p class="card-desc">
+          <span class="lang-de">Kein manuelles Eintippen kryptischer IP-Adressen oder Zertifikate: Scannen Sie den QR-Code vom Server-Dashboard oder fügen Sie den Einmal-Token ein.</span>
+          <span class="lang-en" style="display:none;">Zero manual configuration of complex IP addresses or keys: Simply scan the QR code from the server dashboard or paste your pairing token.</span>
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">🚀</div>
+        <h3 class="card-title">
+          <span class="lang-de">Zentraler Service-Launcher</span>
+          <span class="lang-en" style="display:none;">Unified Service Launcher</span>
+        </h3>
+        <p class="card-desc">
+          <span class="lang-de">Direkter Schnellzugriff auf alle aktivierten Clouddienste: Dateitresor (Drive), Webmail, Mesh-Chat und gehostete Webprojekte aus einer Hand.</span>
+          <span class="lang-en" style="display:none;">Instant access to all enabled cloud services: Encrypted Drive, Webmail, Mesh Chat, and hosted Web projects with single-click launching.</span>
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">🛡️</div>
+        <h3 class="card-title">
+          <span class="lang-de">Unentziehbare Mesh-Rechte</span>
+          <span class="lang-en" style="display:none;">Immutable Mesh Privileges</span>
+        </h3>
+        <p class="card-desc">
+          <span class="lang-de">Garantierte Konnektivität: VPN- und DNS-Privilegien sind architektonisch unentziehbar verankert. Kein Account kann ausgesperrt werden.</span>
+          <span class="lang-en" style="display:none;">Guaranteed connectivity: VPN and DNS privileges are architecturally immutable, ensuring no user can be locked out from the network overlay.</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pairing Section -->
+  <section class="section" id="pairing">
+    <div class="section-header">
+      <h2 class="section-title">
+        <span class="lang-de">In 3 Schritten verbunden</span>
+        <span class="lang-en" style="display:none;">Connected in 3 Easy Steps</span>
+      </h2>
+      <p class="section-desc">
+        <span class="lang-de">Dau-optimierter Verbindungsprozess ohne Router-Eingriffe oder Fachwissen.</span>
+        <span class="lang-en" style="display:none;">Frictionless pairing flow without router modifications or networking expertise.</span>
+      </p>
+    </div>
+
+    <div class="pairing-card">
+      <div>
+        <div class="pairing-step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h4>
+              <span class="lang-de">Server starten & Domain wählen</span>
+              <span class="lang-en" style="display:none;">Start Server & Choose Domain</span>
+            </h4>
+            <p>
+              <span class="lang-de">Im Server-Cockpit die gewünschte Wunschdomain (z. B. <code>meinefirma.local</code>) festlegen.</span>
+              <span class="lang-en" style="display:none;">Set your preferred domain (e.g. <code>mycompany.local</code>) in the server wizard.</span>
+            </p>
+          </div>
+        </div>
+
+        <div class="pairing-step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h4>
+              <span class="lang-de">Pairing-Code abrufen</span>
+              <span class="lang-en" style="display:none;">Retrieve Pairing Code</span>
+            </h4>
+            <p>
+              <span class="lang-de">Auf „Gerät koppeln“ klicken, um den QR-Code oder den sicheren 32-Byte-Token anzuzeigen.</span>
+              <span class="lang-en" style="display:none;">Click "Pair Device" to display the QR code or cryptographic 32-byte pairing token.</span>
+            </p>
+          </div>
+        </div>
+
+        <div class="pairing-step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h4>
+              <span class="lang-de">Client verbinden</span>
+              <span class="lang-en" style="display:none;">Connect Client</span>
+            </h4>
+            <p>
+              <span class="lang-de">Im Client einfügen oder scannen – fertig! Mesh-VPN und DNS-Pfade konfigurieren sich selbst.</span>
+              <span class="lang-en" style="display:none;">Paste or scan in the client app — done! Mesh VPN and DNS pathways configure automatically.</span>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align: center; background: var(--bg-card); padding: 2rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+        <div style="font-size: 3.5rem; margin-bottom: 0.5rem;">📲</div>
+        <h4 style="color: var(--accent-primary); margin-bottom: 0.5rem;">One-Click Mesh Handshake</h4>
+        <p style="font-size: 0.85rem; color: var(--text-secondary);">End-to-End Encrypted via Noise Protocol</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Downloads Section -->
+  <section class="section" id="downloads">
+    <div class="section-header">
+      <h2 class="section-title">
+        <span class="lang-de">Pakete & Downloads</span>
+        <span class="lang-en" style="display:none;">Packages & Downloads</span>
+      </h2>
+      <p class="section-desc">
+        <span class="lang-de">Alle offiziellen Builds für Linux, Windows und Android.</span>
+        <span class="lang-en" style="display:none;">Official verified binaries for Linux, Windows, and Android.</span>
+      </p>
+    </div>
+
+    <div class="download-grid">
+      <div class="download-card">
+        <div class="download-icon">🐧</div>
+        <div class="download-title">Linux x86_64</div>
+        <div class="download-meta">Single Binary · ~10.6 MB</div>
+        <a href="https://raw.githubusercontent.com/benzjeremy/benzstore/content/linux/benzcloud-client/benzcloud-client_1.0" class="btn-download">
+          <span class="lang-de">Binary herunterladen</span>
+          <span class="lang-en" style="display:none;">Download Binary</span>
+        </a>
+      </div>
+
+      <div class="download-card">
+        <div class="download-icon">🪟</div>
+        <div class="download-title">Windows x86_64</div>
+        <div class="download-meta">Native Executable · ~11.3 MB</div>
+        <a href="https://raw.githubusercontent.com/benzjeremy/benzstore/content/windows/benzcloud-client/benzcloud-client_1.0.exe" class="btn-download">
+          <span class="lang-de">.exe herunterladen</span>
+          <span class="lang-en" style="display:none;">Download .exe</span>
+        </a>
+      </div>
+
+      <div class="download-card">
+        <div class="download-icon">🤖</div>
+        <div class="download-title">Android APK</div>
+        <div class="download-meta">Signed APK · ~17 KB</div>
+        <a href="https://raw.githubusercontent.com/benzjeremy/benzstore/content/android/benzcloud-client/benzcloud-client_1.0.apk" class="btn-download">
+          <span class="lang-de">APK herunterladen</span>
+          <span class="lang-en" style="display:none;">Download APK</span>
+        </a>
+      </div>
+
+      <div class="download-card">
+        <div class="download-icon">🏪</div>
+        <div class="download-title">BenzStore</div>
+        <div class="download-meta">One-Click Install & Updates</div>
+        <a href="https://benzjeremy.github.io/benzstore/" class="btn-download" style="background-color: var(--accent-primary); color: #000;">
+          <span class="lang-de">Im BenzStore öffnen</span>
+          <span class="lang-en" style="display:none;">Open in BenzStore</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="section" id="about">
+    <div class="about-box">
+      <div class="about-header">
+        <img src="https://github.com/benzjeremy.png" alt="Jeremy Benz" class="author-avatar">
+        <div class="author-info">
+          <h3>Jeremy Benz (@benzjeremy)</h3>
+          <p>
+            <span class="lang-de">Open-Source-Entwickler & Architekt souveräner Software-Ökosysteme</span>
+            <span class="lang-en" style="display:none;">Open-Source Developer & Architect of Sovereign Software Ecosystems</span>
+          </p>
+        </div>
+      </div>
+      <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">
+        <span class="lang-de">Der BenzCloud Client verbindet Endgeräte ohne Zwischenstationen direkt über verschlüsselte Peer-to-Peer-Tunnel mit privaten BenzCloud-Instanzen. Lizenziert unter der freien GNU General Public License v3.0 (GPL-3.0).</span>
+        <span class="lang-en" style="display:none;">The BenzCloud Client bridges personal devices directly to self-hosted instances over encrypted peer-to-peer tunnels. Licensed under the GNU General Public License v3.0 (GPL-3.0).</span>
+      </p>
+      <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+        <a href="https://github.com/benzjeremy/benzcloud-client/blob/main/LICENSE" target="_blank" rel="noopener noreferrer" style="color: var(--accent-primary); text-decoration: none; font-weight: 600; font-size: 0.9rem;">
+          ⚖️ GNU GPLv3 Lizenz
+        </a>
+        <a href="https://github.com/benzjeremy/benzcloud-client" target="_blank" rel="noopener noreferrer" style="color: var(--accent-primary); text-decoration: none; font-weight: 600; font-size: 0.9rem;">
+          📦 GitHub Repository
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div>
+        © 2026 Jeremy Benz · BenzCloud Ecosystem · GNU GPLv3
+      </div>
+      <div class="footer-links">
+        <a href="https://benzjeremy.github.io/impressum.html">
+          <span class="lang-de">Impressum</span>
+          <span class="lang-en" style="display:none;">Legal Notice</span>
+        </a>
+        <a href="https://benzjeremy.github.io/datenschutz.html">
+          <span class="lang-de">Datenschutz</span>
+          <span class="lang-en" style="display:none;">Privacy Policy</span>
+        </a>
+        <a href="https://benzjeremy.github.io/">
+          <span class="lang-de">Hauptseite</span>
+          <span class="lang-en" style="display:none;">Main Hub</span>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function setLang(lang) {
+      localStorage.setItem('benzcloud_lang', lang);
+      document.documentElement.lang = lang;
+
+      const isDe = lang === 'de';
+      document.querySelectorAll('.lang-de').forEach(el => el.style.display = isDe ? '' : 'none');
+      document.querySelectorAll('.lang-en').forEach(el => el.style.display = isDe ? 'none' : '');
+
+      const btnDe = document.getElementById('btn-lang-de');
+      const btnEn = document.getElementById('btn-lang-en');
+      if (btnDe && btnEn) {
+        btnDe.classList.toggle('active', isDe);
+        btnEn.classList.toggle('active', !isDe);
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const savedLang = localStorage.getItem('benzcloud_lang') || 'de';
+      setLang(savedLang);
+    });
+  </script>
+</body>
+</html>
