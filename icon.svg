@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0d1c"/>
+      <stop offset="100%" stop-color="#141933"/>
+    </linearGradient>
+    <linearGradient id="indigoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#818cf8"/>
+      <stop offset="100%" stop-color="#4f46e5"/>
+    </linearGradient>
+    <linearGradient id="cyanPulse" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#6366f1"/>
+    </linearGradient>
+    <linearGradient id="screenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e1b4b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Background rounded squircle -->
+  <rect x="24" y="24" width="464" height="464" rx="108" fill="url(#bgGrad)" stroke="#253354" stroke-width="8"/>
+
+  <!-- Desktop Cockpit Monitor Body -->
+  <rect x="88" y="96" width="288" height="196" rx="20" fill="url(#screenGrad)" stroke="url(#indigoGrad)" stroke-width="10" filter="url(#glow)"/>
+  
+  <!-- Monitor Stand Base -->
+  <path d="M 206 296 L 194 340 L 270 340 L 258 296" fill="#1e1b4b" stroke="#4f46e5" stroke-width="6" stroke-linejoin="round"/>
+  <rect x="170" y="340" width="124" height="14" rx="7" fill="#4f46e5"/>
+
+  <!-- QR Pairing Matrix on Monitor Screen -->
+  <!-- Outer marker 1 (top-left) -->
+  <rect x="118" y="126" width="38" height="38" rx="6" fill="none" stroke="#818cf8" stroke-width="6"/>
+  <rect x="127" y="135" width="20" height="20" rx="3" fill="#818cf8"/>
+  
+  <!-- Outer marker 2 (top-right) -->
+  <rect x="188" y="126" width="38" height="38" rx="6" fill="none" stroke="#818cf8" stroke-width="6"/>
+  <rect x="197" y="135" width="20" height="20" rx="3" fill="#818cf8"/>
+  
+  <!-- Outer marker 3 (bottom-left) -->
+  <rect x="118" y="196" width="38" height="38" rx="6" fill="none" stroke="#818cf8" stroke-width="6"/>
+  <rect x="127" y="205" width="20" height="20" rx="3" fill="#818cf8"/>
+
+  <!-- QR bit elements -->
+  <rect x="188" y="196" width="16" height="16" rx="3" fill="#38bdf8"/>
+  <rect x="210" y="218" width="16" height="16" rx="3" fill="#818cf8"/>
+  <rect x="166" y="166" width="16" height="16" rx="3" fill="#818cf8"/>
+  <rect x="188" y="174" width="16" height="16" rx="3" fill="#38bdf8"/>
+  <rect x="136" y="174" width="16" height="16" rx="3" fill="#6366f1"/>
+
+  <!-- Cockpit Telemetry lines on right side of screen -->
+  <line x1="250" y1="136" x2="346" y2="136" stroke="#4ade80" stroke-width="6" stroke-linecap="round"/>
+  <line x1="250" y1="162" x2="330" y2="162" stroke="#38bdf8" stroke-width="6" stroke-linecap="round"/>
+  <line x1="250" y1="188" x2="310" y2="188" stroke="#818cf8" stroke-width="6" stroke-linecap="round"/>
+  <line x1="250" y1="214" x2="340" y2="214" stroke="#a78bfa" stroke-width="6" stroke-linecap="round"/>
+  <line x1="250" y1="240" x2="290" y2="240" stroke="#f43f5e" stroke-width="6" stroke-linecap="round"/>
+
+  <!-- Connected Mobile Companion Device (Overlapping Bottom Right) -->
+  <g filter="url(#glow)">
+    <rect x="306" y="226" width="124" height="216" rx="28" fill="#090d1c" stroke="url(#cyanPulse)" stroke-width="8"/>
+    <!-- Mobile Screen -->
+    <rect x="318" y="248" width="100" height="164" rx="16" fill="#141a33"/>
+    <!-- Mobile Speaker notch -->
+    <circle cx="368" cy="237" r="3.5" fill="#38bdf8"/>
+    <!-- Mobile mini QR glyph -->
+    <rect x="342" y="278" width="52" height="52" rx="8" fill="none" stroke="#38bdf8" stroke-width="5"/>
+    <rect x="355" y="291" width="26" height="26" rx="4" fill="#38bdf8"/>
+    <!-- Signal waves radiating from mobile -->
+    <path d="M 346 364 C 360 354 376 354 390 364" fill="none" stroke="#4ade80" stroke-width="5" stroke-linecap="round"/>
+    <path d="M 338 378 C 358 366 378 366 398 378" fill="none" stroke="#4ade80" stroke-width="5" stroke-linecap="round"/>
+    <!-- Verified connection node badge -->
+    <circle cx="368" cy="428" r="5" fill="#4ade80"/>
+  </g>
+
+  <!-- Dynamic Connection Wave from Monitor to Mobile -->
+  <path d="M 230 260 C 270 260 275 310 310 310" fill="none" stroke="#38bdf8" stroke-width="6" stroke-dasharray="6,6"/>
+</svg>
