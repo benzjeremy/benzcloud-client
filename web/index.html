@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BenzCloud Client – Desktop & Mobile</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="app-header">
+    <div class="header-left">
+      <div class="logo-icon">☁️</div>
+      <div class="logo-text">
+        <span class="brand-title">BenzCloud Client</span>
+        <span class="brand-badge">v1.0</span>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="lang-switcher">
+        <button id="langDE" class="btn-lang active" onclick="setLanguage('de')">DE</button>
+        <button id="langEN" class="btn-lang" onclick="setLanguage('en')">EN</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <!-- PAIRING VIEW -->
+    <div id="pairingView" class="view-panel" style="display:none;">
+      <div class="card-box">
+        <div class="badge-pill" data-i18n="pair_badge">🔗 Client-Ersteinrichtung</div>
+        <h1 class="title" data-i18n="pair_title">Mit BenzCloud-Server verbinden</h1>
+        <p class="desc" data-i18n="pair_desc">Gib die lokale IP-Adresse deines BenzCloud-Servers und deine Anmeldedaten ein. Das Mesh-VPN (Nebula) und der DNS-Server konfigurieren sich automatisch.</p>
+        
+        <form id="pairForm" onsubmit="submitPairing(event)">
+          <div class="form-group">
+            <label for="serverUrl" data-i18n="lbl_server_url">Server LAN-Adresse:</label>
+            <input type="text" id="serverUrl" required placeholder="z. B. http://192.168.0.5:8080" value="http://127.0.0.1:8080">
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="pairUser" data-i18n="lbl_user">Benutzername:</label>
+              <input type="text" id="pairUser" required placeholder="admin" value="admin">
+            </div>
+            <div class="form-group">
+              <label for="pairPass" data-i18n="lbl_pass">Passwort:</label>
+              <input type="password" id="pairPass" required placeholder="••••••••">
+            </div>
+          </div>
+          <button type="submit" class="btn-primary btn-block" id="btnPair" data-i18n="btn_pair">🚀 Gerät sicher koppeln &amp; verbinden</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- CONNECTED COCKPIT -->
+    <div id="connectedView" class="view-panel" style="display:none;">
+      <div class="status-banner">
+        <div class="s-left">
+          <span class="pulse-dot"></span>
+          <div>
+            <h2 data-i18n="status_connected">Verbunden mit BenzCloud</h2>
+            <p class="s-domain" id="dispDomain">benzjeremy.de</p>
+          </div>
+        </div>
+        <div class="s-right">
+          <div class="tag-row">
+            <span class="badge-tag">Overlay IP: <strong id="dispOverlayIP">10.42.0.2</strong></span>
+            <span class="badge-tag">Lighthouse: <strong id="dispLighthouse">10.42.0.1</strong></span>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="section-title" data-i18n="services_heading">Deine Enterprise-Dienste (Direktzugriff)</h3>
+      <div class="grid-services">
+        <a class="service-card" id="cardDrive" href="#" target="_blank">
+          <div class="s-icon">📁</div>
+          <div class="s-details">
+            <h4 data-i18n="card_drive_title">BenzCloud Drive</h4>
+            <p class="s-sub" id="subDrive">http://drive.domain</p>
+            <p class="s-desc" data-i18n="card_drive_desc">Dateien hochladen, teilen und synchronisieren.</p>
+          </div>
+        </a>
+
+        <a class="service-card" id="cardMail" href="#" target="_blank">
+          <div class="s-icon">📧</div>
+          <div class="s-details">
+            <h4 data-i18n="card_mail_title">BenzCloud Mail</h4>
+            <p class="s-sub" id="subMail">http://mail.domain</p>
+            <p class="s-desc" data-i18n="card_mail_desc">Internes Webmail &amp; Thunderbird-kompatibles Postfach.</p>
+          </div>
+        </a>
+
+        <a class="service-card" id="cardChat" href="#" target="_blank">
+          <div class="s-icon">💬</div>
+          <div class="s-details">
+            <h4 data-i18n="card_chat_title">BenzCloud Chat</h4>
+            <p class="s-sub" id="subChat">http://chat.domain</p>
+            <p class="s-desc" data-i18n="card_chat_desc">Echtzeit-Teamkommunikation &amp; Direktnachrichten.</p>
+          </div>
+        </a>
+
+        <a class="service-card" id="cardWeb" href="#" target="_blank">
+          <div class="s-icon">🌐</div>
+          <div class="s-details">
+            <h4 data-i18n="card_web_title">Webseiten &amp; Portal</h4>
+            <p class="s-sub" id="subWeb">http://domain</p>
+            <p class="s-desc" data-i18n="card_web_desc">Gehostete Firmen- und Team-Webseiten aufrufen.</p>
+          </div>
+        </a>
+      </div>
+
+      <div class="client-footer-actions">
+        <button class="btn-outline btn-sm" onclick="unpairClient()" data-i18n="btn_unpair">🔌 Entkoppeln / Gerät trennen</button>
+      </div>
+    </div>
+  </main>
+
+  <footer class="app-footer">
+    <span>BenzCloud Client © 2026 Jeremy Benz • GNU GPLv3 Lizenz • Nebula (MIT)</span>
+    <span class="pill-pre">Pre-Release / In aktiver Entwicklung</span>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

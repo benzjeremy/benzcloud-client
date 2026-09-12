@@ -1,0 +1,13 @@
+# Binaries
+benzcloud-client
+benzcloud-client.exe
+*.exe
+*.test
+*.prof
+
+# Data & Builds
+benzcloud-client-data/
+android/build/
+android/gen/
+android/bin/
+android/compiled_res/
